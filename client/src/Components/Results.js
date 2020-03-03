@@ -18,6 +18,13 @@ function Results(props) {
         <p>
           <a href={item.link}> More info ...</a>
         </p>
+        <button
+          onClick={event => {
+            console.log("Hello");
+          }}
+        >
+          Save
+        </button>
       </div>
     );
   });
