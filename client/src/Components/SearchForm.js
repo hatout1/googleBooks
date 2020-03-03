@@ -5,7 +5,7 @@ import Results from "./Results";
 
 function SearchForm() {
   const [value, modifier] = useState({ value: "" });
-  const [book, booksModifier] = useState({ books: [] });
+  let [book, booksModifier] = useState({ books: [] });
 
   function handleSearchClick() {
     let url = `https://www.googleapis.com/books/v1/volumes?q=${value.value}`;
@@ -61,7 +61,7 @@ function SearchForm() {
           </button>
         </form>
         <div>
-          <Results />
+          <Results data={book} />
         </div>
       </div>
     </div>
