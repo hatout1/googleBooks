@@ -1,23 +1,28 @@
 import React from "react";
 
 function Results(props) {
-  const Books = props.data.books[0];
-
-  // let DATA = props => {
-  //   props.Array.map((res, i) => {
-  //     console.log(i);
-  //   });
-  // };
+  const books = props.data.books;
 
   // DATA();
 
-  console.log(Books);
+  console.log(books);
 
-  return (
-    <div>
-      <h1> Hello From Results </h1>
-    </div>
-  );
+  let bookArr = books.map((item, index) => {
+    return (
+      <div>
+        <p key={item.id}>{item.title}</p>
+        <img src={item.image}></img>
+        <p>{item.description}</p>
+        <p>author(s)</p>
+        <h5>{item.authors}</h5>
+        <p>
+          <a href={item.link}> More info ...</a>
+        </p>
+      </div>
+    );
+  });
+
+  return <div>{bookArr}</div>;
 }
 
 export default Results;

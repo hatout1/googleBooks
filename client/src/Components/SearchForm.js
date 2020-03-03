@@ -25,7 +25,7 @@ function SearchForm() {
         book["link"] = info.infoLink;
         allBooks.push(book);
       }
-      booksModifier({ books: [allBooks] });
+      booksModifier({ books: allBooks });
     });
   }
 
