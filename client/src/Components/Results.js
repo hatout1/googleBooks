@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 
 function Results(props) {
   const books = props.data.books;
@@ -7,7 +8,7 @@ function Results(props) {
 
   let bookArr = books.map((item, index) => {
     return (
-      <div>
+      <div className="searchResults" key={item.id}>
         <div className="image">
           <img src={item.image}></img>
         </div>
@@ -36,8 +37,8 @@ function Results(props) {
 
   function saveBook(event, item) {
     axios
-      .post("/api/save", {
-        id: item.id,
+      .post("/save", {
+        bookid: item.id,
         title: item.title,
         authors: item.authors,
         description: item.description,
