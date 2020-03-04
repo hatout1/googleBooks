@@ -4,19 +4,19 @@ const router = express.Router();
 const db = require("../models");
 const axios = require("axios");
 
-router.post("/search", (req, res) => {
-  let bookTitle = req.body.title.replace(" ", "+");
-  axios
-    .get(
-      `https://www.googleapis.com/books/v1/volumes?q=${bookTitle}&key=AIzaSyAYBgHuNo9RKvzKmrZjKlGwDax08USydL0`
-    )
-    .then(response => {
-      res.json(response.data.items);
-    })
-    .catch(err => {
-      res.json({ error: error });
-    });
-});
+// router.post("/search", (req, res) => {
+//   let bookTitle = req.body.title.replace(" ", "+");
+//   axios
+//     .get(
+//       `https://www.googleapis.com/books/v1/volumes?q=${bookTitle}&key=AIzaSyAYBgHuNo9RKvzKmrZjKlGwDax08USydL0`
+//     )
+//     .then(response => {
+//       res.json(response.data.items);
+//     })
+//     .catch(err => {
+//       res.json({ error: error });
+//     });
+// });
 
 router.get("/api/books", (req, res) => {
   db.Book.find()
