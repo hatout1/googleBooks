@@ -3,6 +3,9 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 let BookSchema = new Schema({
+  id: {
+    type: String
+  },
   title: {
     type: String,
     required: true
@@ -18,10 +21,6 @@ let BookSchema = new Schema({
   },
   link: {
     type: String
-  },
-  saved: {
-    type: Boolean,
-    default: false
   }
 });
 

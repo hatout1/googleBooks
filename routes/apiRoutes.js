@@ -18,33 +18,35 @@ const axios = require("axios");
 //     });
 // });
 
-router.get("/api/books", (req, res) => {
+router.get("/allSaved", (req, res) => {
   db.Book.find()
-    .then(booksData => {
-      res.json(booksData);
+    .then(books => {
+      res.json(books);
     })
     .catch(err => {
-      res.json({ error: err });
+      res.json(err);
     });
 });
 
-router.post("/api/books", (req, res) => {
-  db.Book.create(req.body)
-    .then(response => {
-      res.json({ successful: response });
-    })
-    .catch(err => {
-      res.json({ error: err });
-    });
+router.post("/save", (req, res) => {
+  db.Book.create({
+    id: req.body.id,
+    title: req.body.title,
+    description: req.body.description,
+    image: req.body.image,
+    link: req.body.link
+  }).then(book => {
+    res.json(book);
+  });
 });
 
-router.delete("/api/books/:id", (req, res) => {
+router.delete("/book/:id", (req, res) => {
   db.Book.findByIdAndDelete(req.params.id)
-    .then(response => {
-      res.json({ successful: response });
+    .then(book => {
+      res.json(book);
     })
     .catch(err => {
-      rres.json({ error: err });
+      res.json(err);
     });
 });
 

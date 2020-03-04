@@ -3,8 +3,6 @@ import React from "react";
 function Results(props) {
   const books = props.data.books;
 
-  // DATA();
-
   console.log(books);
 
   let bookArr = books.map((item, index) => {
@@ -24,8 +22,10 @@ function Results(props) {
           </p>
           <button
             onClick={event => {
-              console.log("Hello");
+              saveBook(event, item);
             }}
+            id={item.id}
+            data={item}
           >
             Save
           </button>
@@ -33,6 +33,23 @@ function Results(props) {
       </div>
     );
   });
+
+  function saveBook(event, item) {
+    axios
+      .post("/api/save", {
+        id: item.id,
+        title: item.title,
+        authors: item.authors,
+        description: item.description,
+        image: item.image,
+        link: item.link
+      })
+      .catch(err => {
+        if (err) {
+          console.log(err);
+        }
+      });
+  }
 
   return <div>{bookArr}</div>;
 }
