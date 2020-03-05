@@ -26,8 +26,8 @@ function Saved() {
           </div>
           <div className="bookInfo">
             <p>{item.discreption}</p>
-            <p>author(s)</p>
-            <h5>{item.authors}</h5>
+            {/* <p>author(s)</p>
+            <h5>{item.authors}</h5> */}
             <p>
               <a href={item.link}> More info ...</a>
             </p>
