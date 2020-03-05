@@ -5,7 +5,8 @@ const connection = mongoose.connection;
 const logger = require("morgan");
 const PORT = process.env.PORT || 5000;
 
-const MONGO_URI = process.env.MONGO_URI || "mongodb://localhost/googlebooks_db";
+const MONGO_URI =
+  process.env.MONGODB_URI || "mongodb://localhost/googlebooks_db";
 
 mongoose.connect(MONGO_URI, {
   useNewUrlParser: true,
