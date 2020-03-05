@@ -6,9 +6,12 @@ class Nav extends Component {
     return (
       <nav className="navbar navbar-expand-lg navbar-light text-white fixed-top bg-success">
         <h1>Google Books</h1>
-
-        <Link to="/">Search</Link>
-        <Link to="/Saved">Saved</Link>
+        <button>
+          <Link to="/">Search</Link>
+        </button>
+        <button>
+          <Link to="/Saved">Saved</Link>
+        </button>
       </nav>
     );
   }

@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Results from "./Results";
 
 function SearchForm() {
-  const [value, modifier] = useState({ value: "" });
+  const [value, modifier] = useState({ value: " " });
   let [book, booksModifier] = useState({ books: [] });
 
   function handleSearchClick() {

@@ -25,7 +25,7 @@ router.post("/save", (req, res) => {
   });
 });
 
-router.delete("/book/:id", (req, res) => {
+router.delete("/delete/:id", (req, res) => {
   db.Book.findByIdAndDelete(req.params.id)
     .then(book => {
       res.json(book);
