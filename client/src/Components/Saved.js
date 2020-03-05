@@ -16,6 +16,7 @@ function Saved() {
   const renderBooks = () => {
     let savedBooks = books.saved.data;
     let savedArr = !books.saved.data ? [] : books.saved.data;
+    console.log(savedBooks);
 
     return savedArr.map((item, index) => {
       return (
@@ -46,8 +47,6 @@ function Saved() {
       );
     });
   };
-
-  // console.log(savedBooks);
 
   function deleteSaveBook(item) {
     let bookId = item.target.id;
