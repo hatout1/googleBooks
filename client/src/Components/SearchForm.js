@@ -32,34 +32,39 @@ function SearchForm() {
   return (
     <div>
       <div id="searchContainer">
-        <h3>Book Search</h3>
-        <form id="bookSearch">
-          <label htmlFor="bookInput" form="bookSearch">
-            Enter a book title:
-          </label>
-          <br></br>
-          <input
-            type="text"
-            name="bookInput"
-            id="bookInput"
-            form="bookSearch"
-            onChange={e => {
-              modifier({ value: e.target.value });
-            }}
-            placeholder="Book Title"
-            required
-          />
-          <br></br>
-          <button
-            type="submit"
-            onClick={e => {
-              e.preventDefault();
-              handleSearchClick();
-            }}
-          >
-            Search!!
-          </button>
-        </form>
+        <div className="jumbotron jumbotron-fluid">
+          <div className="container">
+            <h1 className="display-4">Book Search</h1>
+            <form>
+              <div class="form-group bookSearch">
+                <label for="exampleInputPassword1">Enter a book title:</label>
+                <div className="inputform">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="exampleInputPassword1"
+                    onChange={e => {
+                      modifier({ value: e.target.value });
+                    }}
+                    placeholder="Book Title"
+                    required
+                  ></input>
+
+                  <button
+                    type="submit"
+                    class="btn btn-primary"
+                    onClick={e => {
+                      e.preventDefault();
+                      handleSearchClick();
+                    }}
+                  >
+                    Submit
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
         <div>
           <Results data={book} />
         </div>

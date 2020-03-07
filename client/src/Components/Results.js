@@ -11,17 +11,8 @@ function Results(props) {
       <div className="searchResults" key={item.id}>
         <div className="image">
           <img src={item.image}></img>
-        </div>
-        <div className="bookInfo">
-          <p key={item.id}>{item.title}</p>
-
-          <p>{item.description}</p>
-          <p>author(s)</p>
-          <h5>{item.authors}</h5>
-          <p>
-            <a href={item.link}> More info ...</a>
-          </p>
           <button
+            className="XXX btn btn-outline-success"
             onClick={event => {
               saveBook(event, item);
             }}
@@ -30,6 +21,21 @@ function Results(props) {
           >
             Save
           </button>
+        </div>
+        <div className="bookInfo">
+          <h3 key={item.id}>{item.title}</h3>
+          <p>author(s)</p>
+          <h5>{item.authors}</h5>
+          <p>
+            <a className="moreInfoTag" href={item.link}>
+              {" "}
+              More info ...
+            </a>
+          </p>
+          <div data-spy="scroll" data-target={item.description} data-offset="0">
+            <h4>Description</h4>
+            <p className="moreInfoDiv">{item.description}</p>
+          </div>
         </div>
       </div>
     );
@@ -52,7 +58,7 @@ function Results(props) {
       });
   }
 
-  return <div>{bookArr}</div>;
+  return <div className="resultDisplayDiv">{bookArr}</div>;
 }
 
 export default Results;

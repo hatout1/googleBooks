@@ -19,15 +19,13 @@ function Saved() {
     // console.log(savedBooks);
 
     return savedArr.map((item, index) => {
+      console.log(item.description);
       return (
-        <div className="searchResults" key={index}>
-          <div className="image">
-            <img src={item.image}></img>
-          </div>
-          <div className="bookInfo">
-            <p>{item.discreption}</p>
-            {/* <p>author(s)</p>
-            <h5>{item.authors}</h5> */}
+        <div className="media searchResults" key={index}>
+          <img src={item.image} className="align-self-center mr-3" alt=""></img>
+          <div className="media-body">
+            <h5 className="mt-0">Center-aligned media</h5>
+            <p>{item.description}</p>
             <p>
               <a href={item.link}> More info ...</a>
             </p>
@@ -49,7 +47,7 @@ function Saved() {
   };
 
   function deleteSaveBook(item) {
-    let bookId = item.target.id;
+    const bookId = item.target.id;
 
     axios.delete(`/delete/${bookId}`).then(result => {
       axios.get("/allSaved").then(res => {

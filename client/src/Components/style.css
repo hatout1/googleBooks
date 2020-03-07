@@ -1,6 +1,68 @@
-.navbar {
-  margin-bottom: 10px;
+.resultDisplayDiv {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
-* {
+
+.navTitle {
+  color: black;
+}
+
+.searchResults {
+  display: flex;
+  padding-left: 10%;
+  padding-right: 10%;
+  margin-top: 10px;
+
+  flex: 1;
+}
+
+.image {
   text-align: center;
+  flex: 1;
+}
+
+img {
+  height: 300px;
+  margin: 10px;
+}
+
+.bookInfo {
+  flex: 5;
+}
+.jumbotron {
+  background-color: rgba(25, 159, 212, 0.212);
+}
+.inputform {
+  display: flex;
+  width: 70%;
+}
+
+.navBtns {
+  color: aliceblue;
+}
+.navbar {
+  text-align: center;
+  background-color: rgba(25, 159, 212, 0.336);
+}
+
+.navBtns {
+  color: aliceblue;
+  font-size: 24px;
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+.moreInfoTag {
+  color: rgb(5, 7, 119);
+  font-size: 16px;
+  margin-left: 0px;
+  text-decoration: none;
+}
+.moreInfoDiv {
+  max-height: 300px;
+  overflow: auto;
+}
+.XXX {
+  width: 200px;
 }
